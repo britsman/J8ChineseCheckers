@@ -6,8 +6,10 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -48,9 +50,7 @@ public class Game {
     	ArrayList<JPanel> panes = new ArrayList<JPanel>();
     	
     	IntStream.rangeClosed(1, 17)
-    		.forEach(i -> rows.add(new Box(BoxLayout.X_AXIS)));
-    	
-		
+    		.forEachOrdered(i -> rows.add(new Box(BoxLayout.X_AXIS)));
 		
     	IntStream.rangeClosed(1, 121)
 		.forEachOrdered(i -> {
